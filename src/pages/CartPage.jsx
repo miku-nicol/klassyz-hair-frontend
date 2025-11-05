@@ -170,7 +170,7 @@ const clearCart = async () => {
   src={
     item.image?.startsWith("http")
       ? item.image
-      : `${import.meta.env.VITE_API_BASE_URL.replace(/\/$/, "")}${item.image?.startsWith("/") ? item.image : "/" + item.image}`
+      : `${import.meta.env.VITE_API_BASE_URL.replace("/api/v1", "")}${item.image?.startsWith("/") ? item.image : "/" + item.image}`
   }
   alt={item.name}
   className="w-24 h-24 sm:w-32 sm:h-32 object-cover rounded-lg border border-gray-200"
