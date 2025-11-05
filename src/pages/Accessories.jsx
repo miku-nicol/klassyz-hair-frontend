@@ -112,7 +112,7 @@ const Accessories = () => {
                 {/* Image */}
                 <div className="relative bg-gray-100 overflow-hidden">
                   <img
-                    src={`${import.meta.env.VITE_API_BASE_URL}${item.image}`}
+                    src={`${import.meta.env.VITE_API_BASE_URL.replace("/api/v1", "")}${item.image}`}
                     alt={item.name}
                     className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
                   />

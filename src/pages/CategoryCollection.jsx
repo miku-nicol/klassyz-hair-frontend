@@ -104,14 +104,15 @@ const CategoryCollection = () => {
                 {/* Product Image */}
                 <div className="relative overflow-hidden">
                   <img
-                    src={
-                      product.image
-                        ? `${baseURL}${product.image}`
-                        : "/placeholder.jpg"
-                    }
-                    alt={product.name}
-                    className="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
+  src={
+    product.image
+      ? `${import.meta.env.VITE_API_BASE_URL.replace("/api/v1", "")}${product.image}`
+      : "/placeholder.jpg"
+  }
+  alt={product.name}
+  className="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-500"
+/>
+
                   <div className="absolute top-3 left-3">
                     <span className="bg-[#C5A572] text-white px-3 py-1 rounded-full text-xs font-medium capitalize">
                       {product.category}

@@ -214,10 +214,14 @@ const CheckoutPage = () => {
                 {cart.cartedItems.map((item) => (
                   <div key={item.productId} className="flex gap-4">
                     <img
-                      src={item.image?.startsWith("http") ? item.image : `http://localhost:9000/${item.image?.replace(/^\/+/, "")}`}
-                      alt={item.name}
-                      className="w-16 h-16 object-cover rounded-lg border border-gray-200"
-                    />
+  src={
+    item.image?.startsWith("http")
+      ? item.image
+      : `${import.meta.env.VITE_API_BASE_URL.replace("/api/v1", "")}/${item.image?.replace(/^\/+/, "")}`
+  }
+  alt={item.name}
+  className="w-16 h-16 object-cover rounded-lg border border-gray-200"
+/>
                     <div className="flex-grow">
                       <h4 className="font-medium text-gray-900">{item.name}</h4>
                       <p className="text-sm text-gray-600">Qty: {item.quantity}</p>
