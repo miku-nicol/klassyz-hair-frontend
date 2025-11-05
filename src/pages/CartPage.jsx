@@ -166,7 +166,7 @@ const clearCart = async () => {
                 {cart.cartedItems.map((item) => (
                   <div key={item.productId} className="p-6">
                     <div className="flex flex-col sm:flex-row gap-6">
-                    <img
+                     <img
   src={
     item.image?.startsWith("http")
       ? item.image

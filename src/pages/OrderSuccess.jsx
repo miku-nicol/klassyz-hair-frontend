@@ -62,10 +62,17 @@ const OrderSuccess = () => {
           {orderItems.map((item) => (
             <div key={item.product} className="flex gap-4 mb-4">
               <img
-                src={item.image?.startsWith("http") ? item.image : `http://localhost:9000/${item.image?.replace(/^\/+/, "")}`}
-                alt={item.name}
-                className="w-16 h-16 object-cover rounded-lg border border-gray-200"
-              />
+  src={
+    item.image
+      ? item.image.startsWith("http")
+        ? item.image
+        : `${import.meta.env.VITE_API_BASE_URL.replace("/api/v1", "")}/${item.image.replace(/^\/+/, "")}`
+      : "/placeholder.jpg"
+  }
+  alt={item.name}
+  className="w-16 h-16 object-cover rounded-lg border border-gray-200"
+/>
+
               <div className="flex-grow">
                 <h3 className="font-medium text-gray-900">{item.name}</h3>
                 <p className="text-gray-600">Qty: {item.quantity}</p>
