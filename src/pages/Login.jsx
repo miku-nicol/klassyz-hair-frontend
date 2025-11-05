@@ -60,6 +60,8 @@ const Login = () => {
 
     const token = response.data.accessToken || response.data.token;
     localStorage.setItem("authToken", token);
+    window.dispatchEvent(new Event("storage")); // ✅ refresh navbar state
+
 
  // 🔹 Auto-add pending product to cart (if any)
   

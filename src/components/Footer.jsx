@@ -161,19 +161,23 @@ function Footer() {
           </motion.form>
 
           <div className="flex space-x-4 mt-4">
-            {[FaFacebookF, FaInstagram, FaTwitter, FaTiktok].map(
-              (Icon, i) => (
-                <motion.a
-                  key={i}
-                  href="#"
-                  whileHover={{ scale: 1.2, color: "#C5A572" }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                >
-                  <Icon size={18} />
-                </motion.a>
-              )
-            )}
-          </div>
+  {[
+    { Icon: FaInstagram, link: "https://instagram.com/klassyz_hairplugg" },
+    { Icon: FaTiktok, link: "https://www.tiktok.com/@klassyz_hairplugg" }
+  ].map(({ Icon, link }, i) => (
+    <motion.a
+      key={i}
+      href={link}
+      target="_blank"
+      rel="noopener noreferrer"
+      whileHover={{ scale: 1.2, color: "#C5A572" }}
+      transition={{ type: "spring", stiffness: 300 }}
+    >
+      <Icon size={18} />
+    </motion.a>
+  ))}
+</div>
+
         </motion.div>
       </div>
 

@@ -92,6 +92,8 @@ const SignUp = () => {
       }
 
       localStorage.setItem("authToken", token);
+      window.dispatchEvent(new Event("storage")); // ✅ refresh navbar state
+
       toast.success(response.data.message || "Account created successfully 🎉");
       // ✅ Check if user came from AddToCart
       // ✅ Handle post-signup redirection and auto-add
